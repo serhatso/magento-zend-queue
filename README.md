@@ -5,11 +5,8 @@ Magento starter module for implementing a simple messaging server based on Zend 
 This module (upon modifying to fit your needs), executes queued tasks one by one in 2 minutes intervals. Task execution intervals can be changed as well as the number of tasks executed per interval.
 
 ## How to add tasks to queue? ##
-Just add
-
-`Mage::helper('taskexecuter')->queueMessages($var);`
-
-Whereas $var contains data you would like to forward to your task function
+Just use `Mage::helper('taskexecuter')->queueMessages($var);` anywhere in your code
+Please note that $var contains data you would like to forward to your task function
 
 ## What will this then execute? ##
 Currently it simply runs the sendMessage function in Helper/Data.php. You will need to fill this function with the code to be executed at each run.
@@ -29,10 +26,10 @@ with
 
 If you have decided to create a new interval you will also need to change ZendQueue/TaskExecuter/etc/config.xml. Add following under crontabs>jobs
 
-`<taskexecuter>
-    <schedule><cron_expr>*/2 * * * *</cron_expr></schedule>
-    <run><model>taskexecuter/observer::executeTaskTwo</model></run>
-</taskexecuter>`
+>`<taskexecuter>
+>>    <schedule><cron_expr>*/2 * * * *</cron_expr></schedule>
+>>    <run><model>taskexecuter/observer::executeTaskTwo</model></run>
+></taskexecuter>`
 
 
 
