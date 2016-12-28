@@ -2,7 +2,7 @@
 Magento starter module for implementing a simple messaging server based on Zend queue. 
 
 ## What does it do? ##
-This module (upon modifying to fit your needs), executes queued tasks one by one in 2 minutes intervals. Task execution intervals can be changed as well as the number of tasks executed per interval.
+This module (upon modifying it to fit your needs), executes queued tasks one by one in 2 minutes intervals. Task execution intervals can be changed as well as the number of tasks executed per interval.
 
 ## How to add tasks to queue? ##
 Just use `Mage::helper('taskexecuter')->queueMessages($var);` anywhere in your code
