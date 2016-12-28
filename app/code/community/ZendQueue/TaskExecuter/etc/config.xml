@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+     <modules>
+        <ZendQueue_TaskExecuter>
+            <version>1.0.0</version>
+        </ZendQueue_TaskExecuter>
+    </modules>
+    <global>
+    <helpers>
+        <taskexecuter>
+            <class>ZendQueue_TaskExecuter_Helper</class>
+        </taskexecuter>
+    </helpers>
+    <models>
+            <taskexecuter>
+                <class>ZendQueue_TaskExecuter_Model</class>
+            </taskexecuter>                         
+    </models>
+    <template>
+            <email>
+                <task_executer_error>
+                    <label>Task failed to execute</label>
+                    <file>task_executer_error.html</file>
+                    <type>html</type>
+                </task_executer_error>
+            </email>
+    </template>
+    </global>
+    <crontab>
+        <jobs>
+            <taskexecuter>
+                <schedule><cron_expr>*/2 * * * *</cron_expr></schedule>
+                <run><model>taskexecuter/observer::executeTask</model></run>
+            </taskexecuter>
+        </jobs>
+    </crontab>
+</config>
