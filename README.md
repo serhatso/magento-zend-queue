@@ -30,9 +30,9 @@ with
 If you have decided to create a new interval you will also need to change ZendQueue/TaskExecuter/etc/config.xml. Add following under crontabs>jobs
 
 `<taskexecuter>
-                <schedule><cron_expr>*/2 * * * *</cron_expr></schedule>
-                <run><model>taskexecuter/observer::executeTaskTwo</model></run>
-            </taskexecuter>`
+    <schedule><cron_expr>*/2 * * * *</cron_expr></schedule>
+    <run><model>taskexecuter/observer::executeTaskTwo</model></run>
+</taskexecuter>`
 
 
 
