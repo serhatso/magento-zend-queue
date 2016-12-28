@@ -33,5 +33,7 @@ If you have decided to create a new interval you will also need to change ZendQu
 </taskexecuter>
 ```
 
+## What if the task fails? ##
+You will get a mail to your email. We have an email template which will be compiled and sent under app/locale/en_US/template/email. This template will be defined in config.xml.
 
 
